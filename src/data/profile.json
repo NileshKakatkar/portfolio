@@ -1,17 +1,14 @@
 {
   "name": "Nilesh Kakatkar",
-  "roles": ["Go Backend Developer", "Platform Engineer", "Networking Enthusiast"],
+  "roles": [
+    "Go Backend Developer"
+  ],
   "summary": "Go backend developer with nearly 2 years of experience on CACHATTO One (C1), a hybrid-work platform that gives enterprises secure, VPN-free remote access to cloud and on-premises resources. I build the platform's multi-tenant core, high availability, WireGuard networking, real-time remote management, and Android device management.",
   "contact": {
     "email": "nileshkakatkar5@gmail.com",
     "phone": "+91 7676620463",
     "github": "https://github.com/NileshKakatkar"
   },
-  "stats": [
-    { "value": "2", "label": "Years in production" },
-    { "value": "5", "label": "Core platform areas" },
-    { "value": "8.25", "label": "CGPA" }
-  ],
   "experience": {
     "company": "Cachatto India Pvt. Ltd.",
     "role": "Software Developer",
@@ -20,49 +17,109 @@
     "items": [
       {
         "title": "Multi-Tenant Platform",
-        "text": "Helped migrate C1 from single-tenant to a centralized multi-tenant architecture, with customer-side connectors that give secure access to private network resources."
+        "text": "Helped migrate C1 from single-tenant to a centralized multi-tenant architecture, with customer-side connectors that give secure access to private network resources.",
+        "tag": "multi-tenant"
       },
       {
         "title": "Remote Management (RMM)",
-        "text": "Built the WebSocket relay for agent-client communication, covering agent registration, authentication, and session management; began moving to WebRTC peer-to-peer."
+        "text": "Built the WebSocket relay for agent-client communication, covering agent registration, authentication, and session management; began moving to WebRTC peer-to-peer.",
+        "tag": "websocket / webrtc"
       },
       {
         "title": "Android MDM",
-        "text": "Implemented Android device management with the Android Management API: enrolment, policy management, Pub/Sub event handling, and device-specific configurations."
+        "text": "Implemented Android device management with the Android Management API: enrolment, policy management, Pub/Sub event handling, and device-specific configurations.",
+        "tag": "android mdm"
       },
       {
         "title": "High Availability",
-        "text": "Implemented primary-standby HA with database replication, failover/promotion, and node synchronization to keep C1 available during failures."
+        "text": "Implemented primary-standby HA with database replication, failover/promotion, and node synchronization to keep C1 available during failures.",
+        "tag": "high availability"
       },
       {
         "title": "WireGuard Networking",
-        "text": "Replaced script-based WireGuard management with a native Go implementation for interfaces, peers, routing, and tunnel lifecycle."
+        "text": "Replaced script-based WireGuard management with a native Go implementation for interfaces, peers, routing, and tunnel lifecycle.",
+        "tag": "wireguard"
       },
       {
         "title": "Architecture & Quality",
-        "text": "Helped move C1 from a tightly to a loosely coupled design, added unit tests, and supported CI/CD adoption for automated builds and validation."
+        "text": "Helped move C1 from a tightly to a loosely coupled design, added unit tests, and supported CI/CD adoption for automated builds and validation.",
+        "tag": "architecture"
       }
     ]
   },
   "skills": [
-    { "group": "Languages", "items": ["Go", "Java"] },
-    { "group": "Backend & Messaging", "items": ["gRPC", "REST APIs", "WebSocket", "WebRTC", "Apache Kafka"] },
-    { "group": "Databases", "items": ["PostgreSQL", "MySQL", "Redis"] },
-    { "group": "Cloud & DevOps", "items": ["AWS", "Docker", "Jenkins (CI/CD)"] },
-    { "group": "Tools", "items": ["Git", "Linux", "Postman"] }
+    {
+      "group": "Languages",
+      "items": [
+        "Go",
+        "Java"
+      ]
+    },
+    {
+      "group": "Backend & Messaging",
+      "items": [
+        "gRPC",
+        "REST APIs",
+        "WebSocket",
+        "WebRTC",
+        "Apache Kafka"
+      ]
+    },
+    {
+      "group": "Databases",
+      "items": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis"
+      ]
+    },
+    {
+      "group": "Cloud & DevOps",
+      "items": [
+        "AWS",
+        "Docker",
+        "Jenkins (CI/CD)"
+      ]
+    },
+    {
+      "group": "Tools",
+      "items": [
+        "Git",
+        "Linux",
+        "Postman"
+      ]
+    }
   ],
   "projects": [
     {
       "name": "Go Shield",
       "subtitle": "L7 Reverse Proxy & Load Balancer",
-      "stack": ["Go", "Redis"],
-      "text": "Built an L7 reverse proxy and load balancer with SSL termination, rate limiting, dynamic backend registration/removal, and Redis-backed configuration/state management."
+      "stack": [
+        "Go",
+        "Redis"
+      ],
+      "text": "Built an L7 reverse proxy and load balancer with SSL termination, rate limiting, dynamic backend registration/removal, and Redis-backed configuration/state management.",
+      "flow": [
+        "Client",
+        "Go Shield",
+        "Backends"
+      ]
     },
     {
       "name": "ShopCore",
       "subtitle": "Microservices E-Commerce Platform",
-      "stack": ["Go", "gRPC", "Kafka"],
-      "text": "Built a microservices-based e-commerce platform using gRPC for service communication, Kafka for asynchronous messaging, and database-backed services for core operations."
+      "stack": [
+        "Go",
+        "gRPC",
+        "Kafka"
+      ],
+      "text": "Built a microservices-based e-commerce platform using gRPC for service communication, Kafka for asynchronous messaging, and database-backed services for core operations.",
+      "flow": [
+        "Gateway",
+        "gRPC services",
+        "Kafka",
+        "Workers"
+      ]
     }
   ],
   "education": {
@@ -70,5 +127,24 @@
     "school": "Jain College of Engineering and Research, Belgaum",
     "period": "Jan 2021 - May 2024",
     "score": "CGPA: 8.25/10"
-  }
+  },
+  "intro": "I build the backend systems behind secure remote access: multi-tenant cores, high availability, WireGuard tunnels and real-time device management.",
+  "terminal": [
+    {
+      "k": "whoami",
+      "v": "nilesh kakatkar"
+    },
+    {
+      "k": "stack",
+      "v": "go, grpc, kafka, redis, postgres"
+    },
+    {
+      "k": "now",
+      "v": "building c1 at cachatto"
+    },
+    {
+      "k": "focus",
+      "v": "multi-tenancy, ha, wireguard"
+    }
+  ]
 }
