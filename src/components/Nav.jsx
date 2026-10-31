@@ -1,15 +1,31 @@
 import { useEffect, useState } from "react";
 
-const links = ["about", "experience", "skills", "projects", "contact"];
+const links = ["work", "stack", "projects", "about", "contact"];
 
 export default function Nav({ name }) {
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => e.isIntersecting && setActive(e.target.id));
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    links.forEach((l) => {
+      const el = document.getElementById(l);
+      if (el) io.observe(el);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      io.disconnect();
+    };
   }, []);
 
   return (
@@ -19,7 +35,7 @@ export default function Nav({ name }) {
       </a>
       <nav>
         {links.map((l) => (
-          <a key={l} href={`#${l}`}>{l}</a>
+          <a key={l} href={`#${l}`} className={active === l ? "on" : ""}>{l}</a>
         ))}
       </nav>
     </header>
