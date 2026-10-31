@@ -256,3 +256,58 @@ section[id] { scroll-margin-top: 70px; }
   * { animation: none !important; transition: none !important; }
   .reveal, .term-body p { opacity: 1; transform: none; }
 }
+
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform-origin: 0 50%; z-index: 200; }
+
+.clickable { cursor: pointer; }
+.clickable:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.hint { position: absolute; right: 18px; bottom: 14px; font-size: 0.7rem; color: var(--accent); opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s; }
+.clickable:hover .hint, .clickable:focus-visible .hint { opacity: 1; transform: none; }
+.tile, .proj { padding-bottom: 42px; }
+
+.overlay { position: fixed; inset: 0; z-index: 150; background: rgba(5, 8, 14, 0.75); backdrop-filter: blur(6px); display: grid; place-items: center; padding: 20px; overflow-y: auto; }
+.sheet { position: relative; width: min(640px, 100%); max-height: 88vh; overflow-y: auto; background: var(--panel); border: 1px solid rgba(94, 234, 212, 0.35); border-radius: 18px; padding: 34px; box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7); }
+.sheet h3 { font-size: 1.6rem; margin: 8px 0 18px; }
+.sheet h5 { margin: 22px 0 8px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); }
+.sheet p { color: #cbd5e1; }
+.sheet .flow { margin-bottom: 4px; }
+.did { list-style: none; display: grid; gap: 10px; margin-bottom: 22px; }
+.did li { position: relative; padding-left: 22px; color: #cbd5e1; }
+.did li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+.close { position: absolute; top: 14px; right: 16px; background: none; border: 0; color: var(--muted); font-size: 1.8rem; line-height: 1; cursor: pointer; transition: color 0.2s, transform 0.2s; }
+.close:hover { color: var(--accent); transform: rotate(90deg); }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.tab { position: relative; background: none; border: 1px solid var(--line); color: var(--muted); padding: 9px 18px; border-radius: 999px; font: inherit; font-size: 0.88rem; cursor: pointer; transition: color 0.2s; }
+.tab.on { color: #062a26; border-color: var(--accent); }
+.tab span { position: relative; z-index: 1; }
+.tab-bg { position: absolute; inset: 0; background: var(--accent); border-radius: 999px; }
+.skill-box { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; align-items: stretch; }
+.skills { display: flex; flex-wrap: wrap; gap: 12px; align-content: flex-start; padding: 24px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); }
+.skill { background: var(--bg); border: 1px solid var(--line); color: var(--text); padding: 12px 22px; border-radius: 10px; font-size: 0.92rem; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+.skill:hover { border-color: var(--accent); }
+.skill.on { border-color: var(--accent); color: var(--accent); background: rgba(94, 234, 212, 0.08); }
+.used { padding: 24px; border-radius: 16px; background: var(--panel); border: 1px dashed rgba(94, 234, 212, 0.4); min-height: 150px; }
+.used h4 { font-size: 1.3rem; margin-bottom: 10px; color: var(--accent); }
+.used .chips { margin-top: 10px; }
+
+.journey { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; margin-top: 44px; align-items: start; }
+.tl { position: relative; padding-left: 34px; display: grid; gap: 34px; }
+.tl-line { position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--line)); transform-origin: top; }
+.tl-step { position: relative; }
+.dot { position: absolute; left: -34px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--accent); }
+.when { font-size: 0.78rem; color: var(--accent); }
+.tl-step h4 { font-size: 1.1rem; margin: 2px 0; }
+.tl-step p { color: var(--muted); }
+.ring-card { position: relative; text-align: center; background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 34px 24px; }
+.ring { width: 190px; height: 190px; transform: rotate(-90deg); }
+.ring-bg { fill: none; stroke: var(--line); stroke-width: 8; }
+.ring-fg { fill: none; stroke: var(--accent); stroke-width: 8; stroke-linecap: round; }
+.ring-text { position: absolute; top: 34px; left: 0; right: 0; height: 190px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ring-text strong { font-size: 2.4rem; line-height: 1; }
+.ring-text span { font-size: 0.75rem; color: var(--muted); margin-top: 4px; }
+.ring-card > p { margin-top: 16px; }
+
+@media (max-width: 900px) {
+  .skill-box, .journey { grid-template-columns: 1fr; }
+}
