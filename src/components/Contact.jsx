@@ -1,18 +1,11 @@
 import Reveal from "./Reveal.jsx";
 
-export default function Contact({ contact, education }) {
+export default function Contact({ contact }) {
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section contact">
       <Reveal>
-        <h2><span className="mono">05.</span> Education & Contact</h2>
-      </Reveal>
-      <Reveal delay={60} className="card edu">
-        <h4>{education.degree}</h4>
-        <p>{education.school}</p>
-        <p className="muted mono">{education.period} | {education.score}</p>
-      </Reveal>
-      <Reveal delay={140} className="contact">
-        <p className="lead">Open to backend and platform engineering opportunities. Say hello.</p>
+        <h2 className="big">Let's work together</h2>
+        <p className="lead">Open to backend roles and interesting problems. Drop me a line.</p>
         <a className="btn primary" href={`mailto:${contact.email}`}>{contact.email}</a>
         <div className="links mono">
           <a href={contact.github} target="_blank" rel="noreferrer">github</a>
