@@ -1,19 +1,16 @@
 # Nilesh Kakatkar - Portfolio
 
-React (Vite) frontend with all content in `src/data/profile.json`. A small Go server serves the production build.
-
-## Run
+React + Vite static site. All content lives in `src/data/profile.json`.
 
 ```
 npm install
 npm run dev
 ```
 
-## Production
+Build for hosting (Vercel, Netlify, Cloudflare Pages, GitHub Pages):
 
 ```
 npm run build
-cd server && go run .
 ```
 
-Open http://localhost:8080. Edit `src/data/profile.json` to change any content.
+Upload the `dist` folder. Run `npm audit` before deploying to check dependencies.
