@@ -2,10 +2,10 @@ import { useEffect } from "react";
 import profile from "./data/profile.json";
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
-import About from "./components/About.jsx";
-import Experience from "./components/Experience.jsx";
-import Skills from "./components/Skills.jsx";
+import Work from "./components/Work.jsx";
+import Stack from "./components/Stack.jsx";
 import Projects from "./components/Projects.jsx";
+import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 
 export default function App() {
@@ -25,11 +25,11 @@ export default function App() {
       <Nav name={profile.name} />
       <main>
         <Hero data={profile} />
-        <About summary={profile.summary} stats={profile.stats} />
-        <Experience data={profile.experience} />
-        <Skills groups={profile.skills} />
+        <Work data={profile.experience} />
+        <Stack groups={profile.skills} />
         <Projects projects={profile.projects} />
-        <Contact contact={profile.contact} education={profile.education} />
+        <About summary={profile.summary} education={profile.education} />
+        <Contact contact={profile.contact} />
       </main>
       <footer className="footer mono">Built by {profile.name} with React</footer>
     </>
