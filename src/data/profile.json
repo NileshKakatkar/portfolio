@@ -18,32 +18,100 @@
       {
         "title": "Multi-Tenant Platform",
         "text": "Helped migrate C1 from single-tenant to a centralized multi-tenant architecture, with customer-side connectors that give secure access to private network resources.",
-        "tag": "multi-tenant"
+        "tag": "multi-tenant",
+        "challenge": "C1 used to run as a separate deployment per customer. The goal was one centralized platform that serves many customers while keeping each customer's resources isolated.",
+        "did": [
+          "Helped move the core from a single-tenant to a centralized multi-tenant architecture",
+          "Worked on customer-side connectors that give secure access to private network resources",
+          "Kept access to each customer's resources separated inside the shared platform"
+        ],
+        "tech": [
+          "Go",
+          "Multi-tenancy",
+          "Connectors"
+        ]
       },
       {
         "title": "Remote Management (RMM)",
         "text": "Built the WebSocket relay for agent-client communication, covering agent registration, authentication, and session management; began moving to WebRTC peer-to-peer.",
-        "tag": "websocket / webrtc"
+        "tag": "websocket / webrtc",
+        "challenge": "Support teams need to reach and manage remote machines in real time, even when those machines sit behind firewalls.",
+        "did": [
+          "Built the WebSocket relay that connects agents and clients",
+          "Handled agent registration, authentication and session management",
+          "Started moving sessions to WebRTC peer-to-peer so traffic does not always pass through the relay"
+        ],
+        "tech": [
+          "Go",
+          "WebSocket",
+          "WebRTC"
+        ]
       },
       {
         "title": "Android MDM",
         "text": "Implemented Android device management with the Android Management API: enrolment, policy management, Pub/Sub event handling, and device-specific configurations.",
-        "tag": "android mdm"
+        "tag": "android mdm",
+        "challenge": "Company Android devices have to be enrolled, held to policy and kept in sync without manual setup on each one.",
+        "did": [
+          "Implemented device enrolment with the Android Management API",
+          "Built policy management for enrolled devices",
+          "Handled device events coming in through Pub/Sub",
+          "Added device-specific configurations"
+        ],
+        "tech": [
+          "Go",
+          "Android Management API",
+          "Pub/Sub"
+        ]
       },
       {
         "title": "High Availability",
         "text": "Implemented primary-standby HA with database replication, failover/promotion, and node synchronization to keep C1 available during failures.",
-        "tag": "high availability"
+        "tag": "high availability",
+        "challenge": "If the primary node goes down, remote access for every user should not stop with it.",
+        "did": [
+          "Implemented a primary-standby setup",
+          "Set up database replication between the nodes",
+          "Built failover and promotion of the standby",
+          "Added node synchronization so both sides stay consistent"
+        ],
+        "tech": [
+          "Go",
+          "Replication",
+          "Failover"
+        ]
       },
       {
         "title": "WireGuard Networking",
         "text": "Replaced script-based WireGuard management with a native Go implementation for interfaces, peers, routing, and tunnel lifecycle.",
-        "tag": "wireguard"
+        "tag": "wireguard",
+        "challenge": "Tunnels were managed through scripts, which are hard to test and hard to recover when something breaks.",
+        "did": [
+          "Replaced script-based WireGuard management with a native Go implementation",
+          "Covers interfaces, peers and routing",
+          "Manages the whole tunnel lifecycle from code"
+        ],
+        "tech": [
+          "Go",
+          "WireGuard",
+          "Linux networking"
+        ]
       },
       {
         "title": "Architecture & Quality",
         "text": "Helped move C1 from a tightly to a loosely coupled design, added unit tests, and supported CI/CD adoption for automated builds and validation.",
-        "tag": "architecture"
+        "tag": "architecture",
+        "challenge": "A tightly coupled codebase makes every change risky and slow to verify.",
+        "did": [
+          "Helped move C1 from a tightly to a loosely coupled design",
+          "Added unit tests",
+          "Supported CI/CD adoption for automated builds and validation"
+        ],
+        "tech": [
+          "Go",
+          "Jenkins",
+          "Unit tests"
+        ]
       }
     ]
   },
@@ -51,42 +119,107 @@
     {
       "group": "Languages",
       "items": [
-        "Go",
-        "Java"
+        {
+          "name": "Go",
+          "usedIn": [
+            "C1 platform",
+            "WireGuard",
+            "Go Shield",
+            "ShopCore"
+          ]
+        },
+        {
+          "name": "Java",
+          "usedIn": []
+        }
       ]
     },
     {
       "group": "Backend & Messaging",
       "items": [
-        "gRPC",
-        "REST APIs",
-        "WebSocket",
-        "WebRTC",
-        "Apache Kafka"
+        {
+          "name": "gRPC",
+          "usedIn": [
+            "ShopCore"
+          ]
+        },
+        {
+          "name": "REST APIs",
+          "usedIn": []
+        },
+        {
+          "name": "WebSocket",
+          "usedIn": [
+            "RMM relay"
+          ]
+        },
+        {
+          "name": "WebRTC",
+          "usedIn": [
+            "RMM peer-to-peer"
+          ]
+        },
+        {
+          "name": "Apache Kafka",
+          "usedIn": [
+            "ShopCore"
+          ]
+        }
       ]
     },
     {
       "group": "Databases",
       "items": [
-        "PostgreSQL",
-        "MySQL",
-        "Redis"
+        {
+          "name": "PostgreSQL",
+          "usedIn": []
+        },
+        {
+          "name": "MySQL",
+          "usedIn": []
+        },
+        {
+          "name": "Redis",
+          "usedIn": [
+            "Go Shield"
+          ]
+        }
       ]
     },
     {
       "group": "Cloud & DevOps",
       "items": [
-        "AWS",
-        "Docker",
-        "Jenkins (CI/CD)"
+        {
+          "name": "AWS",
+          "usedIn": []
+        },
+        {
+          "name": "Docker",
+          "usedIn": []
+        },
+        {
+          "name": "Jenkins (CI/CD)",
+          "usedIn": [
+            "C1 CI/CD"
+          ]
+        }
       ]
     },
     {
       "group": "Tools",
       "items": [
-        "Git",
-        "Linux",
-        "Postman"
+        {
+          "name": "Git",
+          "usedIn": []
+        },
+        {
+          "name": "Linux",
+          "usedIn": []
+        },
+        {
+          "name": "Postman",
+          "usedIn": []
+        }
       ]
     }
   ],
@@ -103,6 +236,13 @@
         "Client",
         "Go Shield",
         "Backends"
+      ],
+      "overview": "A reverse proxy that sits in front of backend services, terminates SSL, spreads traffic across backends and protects them with rate limits.",
+      "features": [
+        "SSL termination at the edge",
+        "Rate limiting to protect backends",
+        "Backends can be registered and removed while it runs",
+        "Configuration and state kept in Redis"
       ]
     },
     {
@@ -119,6 +259,12 @@
         "gRPC services",
         "Kafka",
         "Workers"
+      ],
+      "overview": "An e-commerce backend split into independent services that call each other over gRPC and pass events through Kafka.",
+      "features": [
+        "gRPC for service-to-service communication",
+        "Kafka for asynchronous messaging",
+        "Database-backed services for core operations"
       ]
     }
   ],
@@ -126,7 +272,8 @@
     "degree": "Bachelor of Engineering, Computer Science",
     "school": "Jain College of Engineering and Research, Belgaum",
     "period": "Jan 2021 - May 2024",
-    "score": "CGPA: 8.25/10"
+    "score": "CGPA: 8.25/10",
+    "cgpa": 8.25
   },
   "intro": "I build the backend systems behind secure remote access: multi-tenant cores, high availability, WireGuard tunnels and real-time device management.",
   "terminal": [
@@ -145,6 +292,28 @@
     {
       "k": "focus",
       "v": "multi-tenancy, ha, wireguard"
+    }
+  ],
+  "journey": [
+    {
+      "when": "Jan 2021",
+      "title": "Started B.E. in Computer Science",
+      "sub": "Jain College of Engineering and Research, Belgaum"
+    },
+    {
+      "when": "May 2024",
+      "title": "Graduated",
+      "sub": "CGPA 8.25 / 10"
+    },
+    {
+      "when": "Jan 2025",
+      "title": "Joined Cachatto India",
+      "sub": "Software Developer on C1"
+    },
+    {
+      "when": "Now",
+      "title": "Building the C1 platform",
+      "sub": "Multi-tenancy, HA, WireGuard, RMM and Android MDM"
     }
   ]
 }
