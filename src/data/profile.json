@@ -283,7 +283,7 @@
     },
     {
       "k": "stack",
-      "v": "go, grpc, kafka, redis, postgres"
+      "v": "go, grpc, AWS, kafka, redis, postgres"
     },
     {
       "k": "now",
@@ -291,7 +291,7 @@
     },
     {
       "k": "focus",
-      "v": "multi-tenancy, ha, wireguard"
+      "v": "multi-tenancy, high availability, wireguard"
     }
   ],
   "journey": [
